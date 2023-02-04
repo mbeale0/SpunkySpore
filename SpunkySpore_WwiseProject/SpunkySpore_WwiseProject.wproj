@@ -1,59 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="Project" SchemaVersion="110" WwiseVersion="v2022.1.1" WwiseBuild="8100">
 	<ProjectInfo>
-		<Project Name="SpunkySpore_WwiseProject" ID="{84661DBD-666D-4555-96EB-D4D770FEEE8F}">
+		<Project Name="SpunkySpore_WwiseProject" ID="{75C3243E-C708-41EE-A9F4-E0A8BA95CABB}">
 			<Platforms>
-				<Platform Name="Mac" ReferencePlatform="Mac" ID="{35695C12-2B51-482B-BF8C-C60229EE08FF}" />
-				<Platform Name="Windows" ReferencePlatform="Windows" ID="{BDF0012D-4618-423E-859A-AFEE50EA1BDB}" />
+				<Platform Name="Mac" ReferencePlatform="Mac" ID="{2D32F8F2-7369-4600-A34E-0954FB9ABEEC}" />
+				<Platform Name="Windows" ReferencePlatform="Windows" ID="{5F9FFADF-652D-46CB-9454-EAFCEB7ACAE6}" />
 			</Platforms>
 			<LanguageList>
-				<Language Name="English(US)" ID="{475514FD-F9FB-49A1-BA83-57B8AD15EBA2}" />
-				<Language Name="External" ID="{317056FE-56F5-4844-B257-0753287CFDB5}" />
-				<Language Name="Mixed" ID="{B929B141-153A-4F56-96C4-5842C177E9A6}" />
-				<Language Name="SFX" ID="{C12F7C18-0BFF-4DF1-86AB-12ABE8A0B048}" />
+				<Language Name="English(US)" ID="{65A83E13-1650-4925-9093-04EE03540713}" />
+				<Language Name="External" ID="{BC5D3FDF-DC49-424D-80F4-204C23F4D223}" />
+				<Language Name="Mixed" ID="{BA9D2205-27C7-46E1-9051-A25632B57B12}" />
+				<Language Name="SFX" ID="{04E9694E-0A4B-43A8-947C-8119C6D90630}" />
 			</LanguageList>
 			<PropertyList>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
-						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
+						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
-						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
 						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
+						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True" /><Property Name="SoundBankGenerateMaxAttenuationInfo" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="../../SpunkySpore/Assets/StreamingAssets/Audio/GeneratedSoundBanks" />
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
-						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
 						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
+						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
 					<ValueList>
-						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
+						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdLines" Type="string">
 					<ValueList>
-						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
+						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdDescription" Type="string">
 					<ValueList>
-						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
+						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdLines" Type="string">
 					<ValueList>
-						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
+						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="WwiseVersionWhenCreated" Type="string" Value="Branch=wwise_v2022.1|Build=8100|VersionName=v2022.1.1|Config=Release" />
@@ -11736,7 +11736,7 @@
 					<Comment></Comment>
 					<ObsOccCurve CurveXType="Obstruction" CurveYType="Volume">
 						<PlatformCurve Platform="Linked" EnableCurve="true">
-							<Curve Name="" ID="{8BE3CB0D-9821-49EC-A3A0-5785AA7FC954}">
+							<Curve Name="" ID="{C27C9FBC-DD9F-4534-B51D-441E5D4EBD40}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="3" />
 								</PropertyList>
@@ -11757,7 +11757,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Obstruction" CurveYType="LPF">
 						<PlatformCurve Platform="Linked" EnableCurve="true">
-							<Curve Name="" ID="{9EFDE093-4707-4955-B4EC-B344E3FB3B5B}">
+							<Curve Name="" ID="{34A01512-1607-459C-9241-A2C4E1A4FF58}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="1" />
 								</PropertyList>
@@ -11778,7 +11778,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Obstruction" CurveYType="HPF">
 						<PlatformCurve Platform="Linked" EnableCurve="false">
-							<Curve Name="" ID="{E979A5F8-4A13-4684-BA58-9C5F10BEDFBD}">
+							<Curve Name="" ID="{694CA486-AB93-47E8-BA88-83B5AE74FC75}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="1" />
 								</PropertyList>
@@ -11799,7 +11799,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Occlusion" CurveYType="Volume">
 						<PlatformCurve Platform="Linked" EnableCurve="true">
-							<Curve Name="" ID="{D5B6A196-2F88-41FB-AFB4-3D02104B9E00}">
+							<Curve Name="" ID="{97CF02A8-80F2-4FA8-9F9C-A0E95D6258D2}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="3" />
 								</PropertyList>
@@ -11820,7 +11820,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Occlusion" CurveYType="LPF">
 						<PlatformCurve Platform="Linked" EnableCurve="true">
-							<Curve Name="" ID="{3E232582-1E79-4CFC-A6E4-FFB5990EE2EE}">
+							<Curve Name="" ID="{C6B644FB-D88E-4BA4-BFB9-DD5F775DFC98}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="1" />
 								</PropertyList>
@@ -11841,7 +11841,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Occlusion" CurveYType="HPF">
 						<PlatformCurve Platform="Linked" EnableCurve="false">
-							<Curve Name="" ID="{C5B95F14-5A9F-44F0-A953-C14345EE2210}">
+							<Curve Name="" ID="{0879FB6E-925B-4EA5-87D7-30FC46C2E389}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="1" />
 								</PropertyList>
