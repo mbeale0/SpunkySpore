@@ -6,15 +6,24 @@ using UnityEngine;
 public class enemyAI : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = .8f;
+    [SerializeField] private float aggroSpeedMultiplier = 1f;
+    [SerializeField] private float jumpForce = .8f;
     [SerializeField] private Transform homeWaypt = null;
 
     private RaycastHit2D hit;
     private Rigidbody2D rigidBody;
-    private bool isAttacking = false;
-    private bool isReturningHome = false;
     private Transform target = null;
     bool isGrounded = false;
-    
+
+    public enum ENEMY_STATE
+    {
+        IDLE,
+        AGGRO,
+        KILLING
+    }
+
+    public ENEMY_STATE currentState;
+
     void Start()
     {
         Physics2D.queriesStartInColliders = false;
@@ -26,7 +35,7 @@ public class enemyAI : MonoBehaviour
         RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down);
         if (Vector2.Distance(downHit.point, transform.position) < 0.8f)
         {
-            isGrounded= true;
+            isGrounded = true;
         }
         else
         {
@@ -40,45 +49,66 @@ public class enemyAI : MonoBehaviour
         {
             hit = Physics2D.Raycast(transform.position, Vector2.right);
         }
-        if (hit.collider != null && hit.transform.gameObject.tag == "Player")
+
+        if (hit.collider != null && hit.transform.gameObject.tag == "Player" && currentState != ENEMY_STATE.KILLING)
         {
             target = hit.transform;
             StopAllCoroutines();
-            isAttacking = true;
-            
+            currentState = ENEMY_STATE.AGGRO;
             StartCoroutine(AttackTimeout());
         }
-        if (isReturningHome && Vector2.Distance(transform.position, homeWaypt.position) < .2f)
-        {
-            isReturningHome = false;
-        }
-        if ((isReturningHome || isAttacking) &&  Vector2.Distance(hit.point, transform.position) < .9f && isGrounded)
-        {
-            rigidBody.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
-        }
-        Move();
-        
 
+        switch(currentState)
+        {
+            case ENEMY_STATE.IDLE:
+                aggroSpeedMultiplier = 1f;
+                if (isGrounded && Vector2.Distance(homeWaypt.position, transform.position) > 1.5f) {
+                    turnToDirection(homeWaypt.position.x - transform.position.x);
+                }
+                break;
+            case ENEMY_STATE.AGGRO:
+                aggroSpeedMultiplier = 2.5f;
+                if (isGrounded && Vector2.Distance(target.position, transform.position) > 0.9f)
+                {
+                    turnToDirection(target.position.x - transform.position.x);
+                } else if(Vector2.Distance(target.position, transform.position) < 1.5f)
+                {
+                    currentState = ENEMY_STATE.KILLING;
+                }
+                break;
+            case ENEMY_STATE.KILLING:
+                target.position = new Vector3(transform.position.x + transform.localScale.x, transform.position.y, transform.position.z);
+                target.gameObject.GetComponent<PlayerMovement>().isCaptured = true;
+                rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
+                break;
+        }
+
+        if (currentState != ENEMY_STATE.KILLING) {
+            if (Vector2.Distance(hit.point, transform.position) < .9f && isGrounded)
+            {
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
+            }
+
+            Move();
+        }
     }
 
     private IEnumerator AttackTimeout()
     {
-        yield return new WaitForSeconds(1);
-        isAttacking = false;
-        isReturningHome = true;
-        FlipScale();
+        yield return new WaitForSeconds(5);
+        currentState = ENEMY_STATE.IDLE;
     }
 
     private void Move()
     {
         if (IsFacingRight())
         {
-            rigidBody.AddForce(Vector2.right * .1f, ForceMode2D.Impulse);
+            rigidBody.velocity = new Vector2(moveSpeed * aggroSpeedMultiplier, rigidBody.velocity.y);
             //rigidBody.velocity = new Vector2(moveSpeed, 0);
         }
         else
         {
-            rigidBody.AddForce(Vector2.left * .1f, ForceMode2D.Impulse);
+            rigidBody.velocity = new Vector2(-moveSpeed * aggroSpeedMultiplier, rigidBody.velocity.y);
             //rigidBody.velocity = new Vector2(-moveSpeed, 0);
         }
     }
@@ -88,13 +118,23 @@ public class enemyAI : MonoBehaviour
         return transform.localScale.x > Mathf.Epsilon;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    /*private void OnTriggerExit2D(Collider2D collision)
     {
         if(!isAttacking && !isReturningHome)
         {
             FlipScale();
         }
+    }*/
 
+    public void turnToDirection(float direction)
+    {
+        if(direction < -0.2 && IsFacingRight())
+        {
+            FlipScale();
+        } else if(direction > 0.2 && !IsFacingRight())
+        {
+            FlipScale();
+        }
     }
 
     private void FlipScale()

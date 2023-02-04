@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer = null;
     private Color hiddenColor;
     private bool isHiding = false;
+    public bool isCaptured = false;
 
     public LayerMask whatIsGround;
     void Start()
@@ -27,68 +28,75 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.E))
+        if(!isCaptured)
         {
-            if (isHiding)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                spriteRenderer.material.color = new Vector4(1, 0, 0, 1);
-                isHiding = false;
-            }
-            else
-            {
-                spriteRenderer.material.color = new Vector4(.5f, 0, 0, .4f);
-                isHiding = true;
-            }
-        }
-        if (!isHiding)
-        {
-            if (grapplePoint != Vector3.zero)
-            {
-                GetComponent<Rigidbody2D>().isKinematic = true;
-                line.transform.position = transform.position + Mathf.Sign(grapplePoint.x - transform.position.x) * (Vector3.right / 2);
-                line.SetPosition(1, grapplePoint - line.transform.position);
-                grappleVelocity = new Vector3(grapplePoint.x - transform.position.x - Mathf.Sign(grapplePoint.x - transform.position.x), grapplePoint.y - transform.position.y, 0).normalized * grappleSpeed;
-                transform.Translate(grappleVelocity * Time.deltaTime);
-
-                if(line.GetPosition(1).magnitude < 1)
+                if (isHiding)
                 {
-                    line.SetPosition(1, Vector3.zero);
-                    grappleVelocity = Vector3.zero;
-                    grapplePoint = Vector3.zero;
-                    GetComponent<Rigidbody2D>().isKinematic = false;
+                    spriteRenderer.material.color = new Vector4(1, 0, 0, 1);
+                    isHiding = false;
+                }
+                else
+                {
+                    spriteRenderer.material.color = new Vector4(.5f, 0, 0, .4f);
+                    isHiding = true;
                 }
             }
-            else
+            if (!isHiding)
             {
-                float inputX = Input.GetAxis("Horizontal");
-                float inputY = Input.GetAxis("Vertical");
-                Vector3 mvmt = new(speed.x * inputX, 0, 0);
-                mvmt *= Time.deltaTime;
-                transform.Translate(mvmt);
-            }
-        }
+                if (grapplePoint != Vector3.zero)
+                {
+                    GetComponent<Rigidbody2D>().isKinematic = true;
+                    line.transform.position = transform.position + Mathf.Sign(grapplePoint.x - transform.position.x) * (Vector3.right / 2);
+                    line.SetPosition(1, grapplePoint - line.transform.position);
+                    grappleVelocity = new Vector3(grapplePoint.x - transform.position.x - Mathf.Sign(grapplePoint.x - transform.position.x), grapplePoint.y - transform.position.y, 0).normalized * grappleSpeed;
+                    transform.Translate(grappleVelocity * Time.deltaTime);
 
-        if(grapplePoint == Vector3.zero)
+                    if (line.GetPosition(1).magnitude < 1)
+                    {
+                        line.SetPosition(1, Vector3.zero);
+                        grappleVelocity = Vector3.zero;
+                        grapplePoint = Vector3.zero;
+                        GetComponent<Rigidbody2D>().isKinematic = false;
+                    }
+                }
+                else
+                {
+                    float inputX = Input.GetAxis("Horizontal");
+                    float inputY = Input.GetAxis("Vertical");
+                    Vector3 mvmt = new(speed.x * inputX, 0, 0);
+                    mvmt *= Time.deltaTime;
+                    transform.Translate(mvmt);
+                }
+            }
+
+            if (grapplePoint == Vector3.zero)
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+                    line.transform.position = transform.position + Mathf.Sign(mousePos2D.x - transform.position.x) * (Vector3.right / 1.99f);
+                    grappleVelocity = new Vector3(mousePos2D.x - transform.position.x - Mathf.Sign(mousePos2D.x - transform.position.x), mousePos2D.y - transform.position.y, 0).normalized * grappleSpeed;
+                }
+
+                line.SetPosition(1, line.GetPosition(1) + (grappleVelocity * Time.deltaTime));
+
+                RaycastHit2D ray = Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsGround);
+
+                if (Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsGround))
+                {
+                    Debug.Log("WHEEEEEEE");
+                    grapplePoint = ray.point;
+                }
+            }
+        } else
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-
-                line.transform.position = transform.position + Mathf.Sign(mousePos2D.x - transform.position.x) * (Vector3.right / 1.99f);
-                grappleVelocity = new Vector3(mousePos2D.x - transform.position.x - Mathf.Sign(mousePos2D.x - transform.position.x), mousePos2D.y - transform.position.y, 0).normalized * grappleSpeed;
-            }
-
-            line.SetPosition(1, line.GetPosition(1) + (grappleVelocity * Time.deltaTime));
-
-            RaycastHit2D ray = Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsGround);
-
-            if (Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsGround))
-            {
-                Debug.Log("WHEEEEEEE");
-                grapplePoint = ray.point;
-            }
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            line.SetPosition(1, Vector3.zero);
+            transform.Translate(Vector3.zero);
         }
     }
 }
