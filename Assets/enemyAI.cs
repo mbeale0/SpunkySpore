@@ -66,7 +66,6 @@ public class enemyAI : MonoBehaviour
         yield return new WaitForSeconds(1);
         isAttacking = false;
         isReturningHome = true;
-        Debug.Log("Why>");
         FlipScale();
     }
 
@@ -80,6 +79,7 @@ public class enemyAI : MonoBehaviour
         else
         {
             rigidBody.AddForce(Vector2.left * .1f, ForceMode2D.Impulse);
+            //rigidBody.velocity = new Vector2(-moveSpeed, 0);
         }
     }
 
