@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../..</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows/</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
@@ -158,7 +158,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="1703472526" Type="User" Language="SFX" Hash="{ED84155D-7026-32CB-5676-74FD6787099E}">
+		<SoundBank Id="1703472526" Type="User" Language="SFX" Hash="{DE4D9A5E-A49C-3C06-8D22-A5515381C464}">
 			<ShortName>Grapple</ShortName>
 			<Path>Grapple.bnk</Path>
 			<Media>
@@ -170,6 +170,10 @@
 					<ShortName>Struggle\Struggle_3.wav</ShortName>
 					<CachePath>SFX/Struggle/Struggle_3_10C4C929.wem</CachePath>
 				</File>
+				<File Id="31658363" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mantis_4.wav</ShortName>
+					<CachePath>SFX/Mantis_4_10C4C929.wem</CachePath>
+				</File>
 				<File Id="42065898" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>green head and orange.39.wav</ShortName>
 					<CachePath>SFX/green head and orange.39_D77F5E12.wem</CachePath>
@@ -177,6 +181,10 @@
 				<File Id="61148418" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>green head and orange.7.wav</ShortName>
 					<CachePath>SFX/green head and orange.7_6E9BF664.wem</CachePath>
+				</File>
+				<File Id="102563141" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mantis_2.wav</ShortName>
+					<CachePath>SFX/Mantis_2_10C4C929.wem</CachePath>
 				</File>
 				<File Id="188258903" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>apple squish.35.wav</ShortName>
@@ -190,6 +198,10 @@
 					<ShortName>Death\Death_1.wav</ShortName>
 					<CachePath>SFX/Death/Death_1_10C4C929.wem</CachePath>
 				</File>
+				<File Id="241804865" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>skulking shiitake (hiding)_1.wav</ShortName>
+					<CachePath>SFX/skulking shiitake (hiding)_1_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="242315375" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mantis_6.wav</ShortName>
 					<CachePath>SFX/Mantis_6_10C4C929.wem</CachePath>
@@ -197,6 +209,14 @@
 				<File Id="277221710" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Action\Action_2.wav</ShortName>
 					<CachePath>SFX/Action/Action_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="287213480" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>section 1 (theme)_1.wav</ShortName>
+					<CachePath>SFX/section 1 (theme)_1_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="323489650" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>section 4 (brass)_1.wav</ShortName>
+					<CachePath>SFX/section 4 (brass)_1_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="364918756" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>apple squish.31.wav</ShortName>
@@ -214,6 +234,10 @@
 					<ShortName>green head and orange.17.wav</ShortName>
 					<CachePath>SFX/green head and orange.17_1935BCFB.wem</CachePath>
 				</File>
+				<File Id="438442411" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mantis_1.wav</ShortName>
+					<CachePath>SFX/Mantis_1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="452553734" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Stab.wav</ShortName>
 					<CachePath>SFX/Stab_10C4C929.wem</CachePath>
@@ -226,6 +250,10 @@
 					<ShortName>Death\Death_3.wav</ShortName>
 					<CachePath>SFX/Death/Death_3_10C4C929.wem</CachePath>
 				</File>
+				<File Id="530002202" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>intro and section 1 (theme)_1.wav</ShortName>
+					<CachePath>SFX/intro and section 1 (theme)_1_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="530435415" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Land\Land_1.wav</ShortName>
 					<CachePath>SFX/Land/Land_1_10C4C929.wem</CachePath>
@@ -237,6 +265,10 @@
 				<File Id="546308634" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Grapple\Grapple_1.wav</ShortName>
 					<CachePath>SFX/Grapple/Grapple_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="554094767" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>section 3 (halftime theme)_1.wav</ShortName>
+					<CachePath>SFX/section 3 (halftime theme)_1_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="558665641" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>apple squish.27.wav</ShortName>
@@ -258,6 +290,10 @@
 					<ShortName>Land\Land_5.wav</ShortName>
 					<CachePath>SFX/Land/Land_5_10C4C929.wem</CachePath>
 				</File>
+				<File Id="603618823" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mantis_3.wav</ShortName>
+					<CachePath>SFX/Mantis_3_10C4C929.wem</CachePath>
+				</File>
 				<File Id="609035519" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>green head and orange.21.wav</ShortName>
 					<CachePath>SFX/green head and orange.21_2036CECA.wem</CachePath>
@@ -277,6 +313,10 @@
 				<File Id="671436198" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Land\Land_2.wav</ShortName>
 					<CachePath>SFX/Land/Land_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="715354615" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mantis_5.wav</ShortName>
+					<CachePath>SFX/Mantis_5_10C4C929.wem</CachePath>
 				</File>
 				<File Id="717969913" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Land\Land_6.wav</ShortName>
@@ -302,6 +342,10 @@
 					<ShortName>Action\Action_1.wav</ShortName>
 					<CachePath>SFX/Action/Action_1_10C4C929.wem</CachePath>
 				</File>
+				<File Id="900215982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>section 2 (bass)_1.wav</ShortName>
+					<CachePath>SFX/section 2 (bass)_1_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="938328629" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Blade.wav</ShortName>
 					<CachePath>SFX/Blade_10C4C929.wem</CachePath>
@@ -324,8 +368,17 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3628150596" Name="GrappleLatch" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="1246886611" Name="GrappleShoot" DurationType="Infinite">
+				<Event Id="4058101365" Name="GameStart">
+					<MediaRefs>
+						<MediaRef Id="287213480"/>
+						<MediaRef Id="323489650"/>
+						<MediaRef Id="530002202"/>
+						<MediaRef Id="554094767"/>
+						<MediaRef Id="900215982"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3628150596" Name="GrappleLatch"/>
+				<Event Id="1246886611" Name="GrappleShoot">
 					<MediaRefs>
 						<MediaRef Id="225582601"/>
 						<MediaRef Id="546308634"/>
@@ -338,28 +391,29 @@
 						<MediaRef Id="1059248685"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="204092275" Name="GrappleUnlatch" DurationType="Infinite">
+				<Event Id="204092275" Name="GrappleUnlatch">
 					<MediaRefs>
 						<MediaRef Id="225582601"/>
 						<MediaRef Id="584894398"/>
 						<MediaRef Id="974688462"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3500475733" Name="Hide" DurationType="OneShot" DurationMin="0.25345212" DurationMax="0.6102949">
+				<Event Id="3500475733" Name="Hide">
 					<MediaRefs>
 						<MediaRef Id="188258903"/>
+						<MediaRef Id="241804865"/>
 						<MediaRef Id="364918756"/>
 						<MediaRef Id="558665641"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1466384055" Name="Interact" DurationType="OneShot" DurationMin="0.39739582" DurationMax="0.48072916">
+				<Event Id="1466384055" Name="Interact">
 					<MediaRefs>
 						<MediaRef Id="277221710"/>
 						<MediaRef Id="540195304"/>
 						<MediaRef Id="880599432"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="674522502" Name="Land" DurationType="OneShot" DurationMin="0.24895833" DurationMax="0.6276042">
+				<Event Id="674522502" Name="Land">
 					<MediaRefs>
 						<MediaRef Id="458592185"/>
 						<MediaRef Id="530435415"/>
@@ -369,13 +423,13 @@
 						<MediaRef Id="717969913"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1049332501" Name="MantisAggro" DurationType="OneShot" DurationMin="7.33597" DurationMax="17.475016">
+				<Event Id="1049332501" Name="MantisAggro">
 					<MediaRefs>
 						<MediaRef Id="11113727"/>
 						<MediaRef Id="242315375"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3896898561" Name="MantisKill" DurationType="OneShot" DurationMin="4.4" DurationMax="4.9557295">
+				<Event Id="3896898561" Name="MantisKill">
 					<MediaRefs>
 						<MediaRef Id="25525937"/>
 						<MediaRef Id="231880216"/>
@@ -388,7 +442,16 @@
 						<MediaRef Id="972410363"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2298039058" Name="MoveStart" DurationType="Infinite">
+				<Event Id="2416760516" Name="MantisPassive">
+					<MediaRefs>
+						<MediaRef Id="31658363"/>
+						<MediaRef Id="102563141"/>
+						<MediaRef Id="438442411"/>
+						<MediaRef Id="603618823"/>
+						<MediaRef Id="715354615"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2298039058" Name="MoveStart">
 					<MediaRefs>
 						<MediaRef Id="42065898"/>
 						<MediaRef Id="61148418"/>
@@ -401,9 +464,21 @@
 						<MediaRef Id="974688462"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1159713994" Name="MoveStop" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1159713994" Name="MoveStop"/>
+				<Event Id="1900047408" Name="Unhide">
+					<MediaRefs>
+						<MediaRef Id="188258903"/>
+						<MediaRef Id="287213480"/>
+						<MediaRef Id="323489650"/>
+						<MediaRef Id="364918756"/>
+						<MediaRef Id="530002202"/>
+						<MediaRef Id="554094767"/>
+						<MediaRef Id="558665641"/>
+						<MediaRef Id="900215982"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{EFCB0AD0-4A93-1137-90A7-F725B2BA2551}</FileHash>
+	<FileHash>{AEB7660C-31BC-0FAA-3935-E48264DAADD6}</FileHash>
 </SoundBanksInfo>

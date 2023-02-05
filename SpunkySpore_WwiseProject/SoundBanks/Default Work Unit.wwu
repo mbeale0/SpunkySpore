@@ -7,11 +7,14 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="GrappleLatch" ID="{7C59F607-0D23-41B9-8022-ABB80553C930}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="GrappleShoot" ID="{5728198A-2FA0-41FF-9EEB-C37C5ECA3F06}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Unhide" ID="{557966DA-3D11-427D-9F7A-EF1FE69E8F91}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MantisAggro" ID="{8E414E0E-41DE-429D-970C-9CC770987BFF}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Hide" ID="{D579939A-6F27-4547-8F9A-66DA41D10879}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MantisPassive" ID="{9F7811F6-2E07-4691-ADAB-C8AADC12D402}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Interact" ID="{180F1963-6D26-480D-8534-4F7F65FE582B}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Land" ID="{3D4890CE-966D-4947-9A51-CD65184CFEB9}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="GrappleUnlatch" ID="{BFA81F31-185D-4992-BB5E-48C4B76653B7}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GameStart" ID="{089A005F-FA28-49CA-8FDB-66821FFEAEB0}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MoveStop" ID="{CFEE36DE-13D0-4A25-BCDC-630BA4E390A8}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MoveStart" ID="{65E0E866-876C-4B0C-8345-B7E636D327C9}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MantisKill" ID="{03D6077C-0A4A-4DDD-BFB5-4A77ACF37E59}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>

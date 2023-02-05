@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 0dec10fce011454bb6da40a7ae53a6c1
     GuidInternal: 
-    m_lastTime: -8585260378120890357
+    m_lastTime: -8585259741562704723
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Acoustic Textures.wwu
     PathAndIcons:
@@ -37,7 +37,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Factory Acoustic Textures
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8585260378120890357
+    m_lastTime: -8585259741562204380
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 82062049a9fc534f9482f55d4eaa1b29
     GuidInternal: 
-    m_lastTime: -8585260378126850353
+    m_lastTime: -8585259741627522007
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 28196594347d414b974d2f85d14d54ad
     GuidInternal: 
-    m_lastTime: -8585260378120950350
+    m_lastTime: -8585259741629786964
     List:
     - name: Grapple
       guid: 58be4611cc35084aa880a2f49ef1dfe0
@@ -373,8 +373,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: aac6e83e3eaebd4d84da30f7cf13ff28
     GuidInternal: 
-    m_lastTime: -8585260378127180355
+    m_lastTime: -8585259741560415625
     List:
+    - name: GameStart
+      guid: 5f009a0828faca498fdb66821ffeaeb0
+      id: 4058101365
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: aac6e83e3eaebd4d84da30f7cf13ff28
+      - ElementName: GameStart
+        ObjectType: 3
+        guid: 5f009a0828faca498fdb66821ffeaeb0
+      Path: Events\Default Work Unit\GameStart
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: GrappleLatch
       guid: 07f6597c230db9418022abb80553c930
       id: 3628150596
@@ -562,6 +579,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Unhide
+      guid: da667955113d7d429f7aef1fe69e8f91
+      id: 1900047408
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: aac6e83e3eaebd4d84da30f7cf13ff28
+      - ElementName: Unhide
+        ObjectType: 3
+        guid: da667955113d7d429f7aef1fe69e8f91
+      Path: Events\Default Work Unit\Unhide
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -574,7 +608,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: fc0b05b9a70f134aa7f3ed453f187e21
     GuidInternal: 
-    m_lastTime: -8585260378127170357
+    m_lastTime: -8585259741622487675
     List: []
   - PhysicalPath: Game Parameters\Factory Soundseed Air Game Syncs.wwu
     PathAndIcons:
@@ -587,7 +621,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Factory Soundseed Air Game Syncs
     guid: 5577163b42fb8b4598bf96f557afb3b9
     GuidInternal: 
-    m_lastTime: -8585260378127170357
+    m_lastTime: -8585259741623125873
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -741,7 +775,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 735b1db04f2a3a47902bfc62bb87453d
     GuidInternal: 
-    m_lastTime: -8585260378120910358
+    m_lastTime: -8585259741625368838
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -755,7 +789,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 2113738528fe1448934e30324a571fc8
     GuidInternal: 
-    m_lastTime: -8585260378120900357
+    m_lastTime: -8585259741625071460
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -769,7 +803,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 9227f08b1a94894bb200ad56836882f9
     GuidInternal: 
-    m_lastTime: -8585260378120900357
+    m_lastTime: -8585259741559741695
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 

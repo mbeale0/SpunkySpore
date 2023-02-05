@@ -156,6 +156,23 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{07D38B73-5D84-4ADA-915B-9396518317C4}" ShortID="732761441">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Area1" ID="{33598453-21DF-4951-915B-9C5DD2B69FCE}" WorkUnitID="{7B5603B8-B4A7-41CC-8805-7C276DDDA445}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{409D6BA4-3322-4F6D-AFED-261FE87BB2B5}" ShortID="511065556">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="skulking shiitake (hiding)_1" ID="{0B322783-D997-49D0-A5CA-82096873DDC1}" WorkUnitID="{7B5603B8-B4A7-41CC-8805-7C276DDDA445}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Interact" ID="{180F1963-6D26-480D-8534-4F7F65FE582B}">
@@ -178,28 +195,6 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{18CF0CB8-CEC4-479A-89EE-A55F1BB6D5BC}" ShortID="136930409">
-							<PropertyList>
-								<Property Name="Delay" Type="Real64" Value="10">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{6EDF1769-1517-497B-9A72-2681360D97A8}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="5"/>
-													<Property Name="Min" Type="Real64" Value="-5"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Mantis_Aggro" ID="{5A2494A9-19F0-4FB0-9F35-FFA1CD07157F}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="MantisPassive" ID="{9F7811F6-2E07-4691-ADAB-C8AADC12D402}">
@@ -208,6 +203,45 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Mantis_Idle" ID="{3B6869D8-CB96-4E8B-8BBA-9125F89FF926}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Unhide" ID="{557966DA-3D11-427D-9F7A-EF1FE69E8F91}">
+					<ChildrenList>
+						<Action Name="" ID="{F2C7C16E-1007-458F-9420-F90F7DB0F09A}" ShortID="908499402">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Hide" ID="{12650852-0037-4379-B7D6-A5AFD73B7515}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{43462235-A428-47AD-B8A5-B8D7C5875E61}" ShortID="1016092723">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="skulking shiitake (hiding)_1" ID="{0B322783-D997-49D0-A5CA-82096873DDC1}" WorkUnitID="{7B5603B8-B4A7-41CC-8805-7C276DDDA445}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A49852C5-6151-488D-A15C-0A82218FC837}" ShortID="174026346">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Area1" ID="{33598453-21DF-4951-915B-9C5DD2B69FCE}" WorkUnitID="{7B5603B8-B4A7-41CC-8805-7C276DDDA445}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="GameStart" ID="{089A005F-FA28-49CA-8FDB-66821FFEAEB0}">
+					<ChildrenList>
+						<Action Name="" ID="{D461EE54-7AA0-4461-868C-44261B3BDB25}" ShortID="1068182059">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Area1" ID="{33598453-21DF-4951-915B-9C5DD2B69FCE}" WorkUnitID="{7B5603B8-B4A7-41CC-8805-7C276DDDA445}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -2,8 +2,8 @@
 <PlatformInfo>
 	<Platform Name="Windows" BasePlatform="Windows" Generator="2022.1.1.8100"/>
 	<RootPaths>
-		<ProjectRoot>../..</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows/</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
@@ -24,9 +24,9 @@
 		<UseSoundBankNames>true</UseSoundBankNames>
 		<AllowExceedingMaxSize>false</AllowExceedingMaxSize>
 		<MaxAttenuationInfo>false</MaxAttenuationInfo>
-		<EstimatedDurationInfo>true</EstimatedDurationInfo>
+		<EstimatedDurationInfo>false</EstimatedDurationInfo>
 		<PrintObjectGuid>false</PrintObjectGuid>
 		<PrintObjectPath>false</PrintObjectPath>
 	</Settings>
-	<FileHash>{D83ABD8C-819B-7DC7-0142-19201E23307E}</FileHash>
+	<FileHash>{066D7AFC-042A-26C6-2619-8FD01BAEE3B6}</FileHash>
 </PlatformInfo>

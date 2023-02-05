@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (grapplePoint == Vector3.zero)
+            if (grapplePoint == Vector3.zero && !isHiding)
             {
                 if (Input.GetButtonDown("Fire1"))
                 {

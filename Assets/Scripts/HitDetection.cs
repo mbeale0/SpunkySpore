@@ -17,12 +17,15 @@ public class HitDetection : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            bossDoors.SetActive(false);
+            
             lives--;
             StartCoroutine(MovePlayer(collision));
             
             StartCoroutine(Flash());
-            if (lives == 0) { Destroy(parent); }
+            if (lives == 0) {
+                bossDoors.SetActive(false); 
+                Destroy(parent); 
+            }
         }
     }
 
