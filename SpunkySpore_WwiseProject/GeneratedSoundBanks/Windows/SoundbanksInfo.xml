@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../../</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Windows/</SourceFilesRoot>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
@@ -324,8 +324,8 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3628150596" Name="GrappleLatch"/>
-				<Event Id="1246886611" Name="GrappleShoot">
+				<Event Id="3628150596" Name="GrappleLatch" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1246886611" Name="GrappleShoot" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="225582601"/>
 						<MediaRef Id="546308634"/>
@@ -338,28 +338,28 @@
 						<MediaRef Id="1059248685"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="204092275" Name="GrappleUnlatch">
+				<Event Id="204092275" Name="GrappleUnlatch" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="225582601"/>
 						<MediaRef Id="584894398"/>
 						<MediaRef Id="974688462"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3500475733" Name="Hide">
+				<Event Id="3500475733" Name="Hide" DurationType="OneShot" DurationMin="0.25345212" DurationMax="0.6102949">
 					<MediaRefs>
 						<MediaRef Id="188258903"/>
 						<MediaRef Id="364918756"/>
 						<MediaRef Id="558665641"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1466384055" Name="Interact">
+				<Event Id="1466384055" Name="Interact" DurationType="OneShot" DurationMin="0.39739582" DurationMax="0.48072916">
 					<MediaRefs>
 						<MediaRef Id="277221710"/>
 						<MediaRef Id="540195304"/>
 						<MediaRef Id="880599432"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="674522502" Name="Land">
+				<Event Id="674522502" Name="Land" DurationType="OneShot" DurationMin="0.24895833" DurationMax="0.6276042">
 					<MediaRefs>
 						<MediaRef Id="458592185"/>
 						<MediaRef Id="530435415"/>
@@ -369,13 +369,13 @@
 						<MediaRef Id="717969913"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1049332501" Name="MantisAggro">
+				<Event Id="1049332501" Name="MantisAggro" DurationType="OneShot" DurationMin="7.33597" DurationMax="17.475016">
 					<MediaRefs>
 						<MediaRef Id="11113727"/>
 						<MediaRef Id="242315375"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3896898561" Name="MantisKill">
+				<Event Id="3896898561" Name="MantisKill" DurationType="OneShot" DurationMin="4.4" DurationMax="4.9557295">
 					<MediaRefs>
 						<MediaRef Id="25525937"/>
 						<MediaRef Id="231880216"/>
@@ -388,7 +388,7 @@
 						<MediaRef Id="972410363"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2298039058" Name="MoveStart">
+				<Event Id="2298039058" Name="MoveStart" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="42065898"/>
 						<MediaRef Id="61148418"/>
@@ -401,9 +401,9 @@
 						<MediaRef Id="974688462"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1159713994" Name="MoveStop"/>
+				<Event Id="1159713994" Name="MoveStop" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5356CE86-3A8E-C1AE-BDAD-A3E9F0793757}</FileHash>
+	<FileHash>{EFCB0AD0-4A93-1137-90A7-F725B2BA2551}</FileHash>
 </SoundBanksInfo>

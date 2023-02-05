@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
                         grappleVelocity = Vector3.zero;
                         grapplePoint = Vector3.zero;
                         GetComponent<Rigidbody2D>().isKinematic = false;
+                        AkSoundEngine.PostEvent("GrappleUnlatch", gameObject);
                     }
                 }
                 else
@@ -83,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
                     line.transform.position = transform.position + Mathf.Sign(mousePos2D.x - transform.position.x) * (Vector3.right / 1.99f);
                     grappleVelocity = new Vector3(mousePos2D.x - transform.position.x - Mathf.Sign(mousePos2D.x - transform.position.x), mousePos2D.y - transform.position.y, 0).normalized * grappleSpeed;
+                    AkSoundEngine.PostEvent("GrappleShoot", gameObject);
                 }
 
                 line.SetPosition(1, line.GetPosition(1) + (grappleVelocity * Time.deltaTime));
@@ -93,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     Debug.Log("WHEEEEEEE");
                     grapplePoint = ray.point;
+                    AkSoundEngine.PostEvent("GrappleLatch", gameObject);
                 }
             }
         }
