@@ -28,7 +28,7 @@ public class HitDetection : MonoBehaviour
 
     private IEnumerator MovePlayer(Collider2D collision)
     {
-        collision.GetComponent<Rigidbody2D>().velocity = new Vector2(-18, 20);
+        collision.GetComponent<Rigidbody2D>().velocity = new Vector2(-30, 20);
         yield return new WaitForSeconds(1f);
         collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
     }
