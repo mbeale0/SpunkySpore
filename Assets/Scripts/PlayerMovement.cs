@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         loseCanvas.SetActive(false);
         Time.timeScale = 1;
         AkSoundEngine.StopAll(gameObject);
+        AkSoundEngine.PostEvent("GameStart", gameObject);
     }
     void Update()
     {
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
                 if (isHiding)
                 {
                     anim.SetBool("isHiding", false);
+                    AkSoundEngine.PostEvent("Unhide", gameObject);
                     GetComponent<Rigidbody2D>().gravityScale = 1;
                     GetComponent<BoxCollider2D>().isTrigger = false;
                     isHiding = false;
@@ -160,5 +162,10 @@ public class PlayerMovement : MonoBehaviour
     public bool getHiding()
     {
         return isHiding;
+    }
+
+    private void OnDestroy()
+    {
+        AkSoundEngine.StopAll(gameObject);
     }
 }
