@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isCaptured = false;
 
     public LayerMask whatIsGround;
+    public LayerMask whatIsMycelium;
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -33,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isCaptured)
         {
             // TODO: Add check for on mycellium block
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && grappleVelocity == Vector3.zero)
             {
                 if (isHiding)
                 {
@@ -56,9 +57,10 @@ public class PlayerMovement : MonoBehaviour
                     grappleVelocity = new Vector3(grapplePoint.x - transform.position.x - Mathf.Sign(grapplePoint.x - transform.position.x), grapplePoint.y - transform.position.y, 0).normalized * grappleSpeed;
                     transform.Translate(grappleVelocity * Time.deltaTime);
 
-                    if (line.GetPosition(1).magnitude < 1)
+                    if (line.GetPosition(1).magnitude < 2)
                     {
                         line.SetPosition(1, Vector3.zero);
+                        GetComponent<Rigidbody2D>().velocity = grappleVelocity / 4.5f;
                         grappleVelocity = Vector3.zero;
                         grapplePoint = Vector3.zero;
                         GetComponent<Rigidbody2D>().isKinematic = false;
@@ -91,11 +93,17 @@ public class PlayerMovement : MonoBehaviour
 
                 RaycastHit2D ray = Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsGround);
 
-                if (Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsGround))
+                if (Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsMycelium))
                 {
                     Debug.Log("WHEEEEEEE");
                     grapplePoint = ray.point;
                     AkSoundEngine.PostEvent("GrappleLatch", gameObject);
+                } else if(line.GetPosition(1).magnitude > 50 || Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsGround))
+                {
+                    line.SetPosition(1, Vector3.zero);
+                    grappleVelocity = Vector3.zero;
+                    grapplePoint = Vector3.zero;
+                    AkSoundEngine.PostEvent("GrappleUnlatch", gameObject);
                 }
             }
         }

@@ -8,12 +8,16 @@ public class enemyAI : MonoBehaviour
     [SerializeField] private float moveSpeed = .8f;
     [SerializeField] private float aggroSpeedMultiplier = 1f;
     [SerializeField] private float jumpForce = .8f;
+    [SerializeField] private float homeRange = 5f;
     [SerializeField] private Transform homeWaypt = null;
+    public float jumpRange = -1f;
 
-    private RaycastHit2D hit;
+    private RaycastHit2D edgeHit;
+    private RaycastHit2D playerHit;
     private Rigidbody2D rigidBody;
     private Transform target = null;
-    bool isGrounded = false;
+    public bool isGrounded = false;
+    public LayerMask whatIsGround;
 
     public enum ENEMY_STATE
     {
@@ -32,8 +36,8 @@ public class enemyAI : MonoBehaviour
 
     void Update()
     {
-        RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down);
-        if (Vector2.Distance(downHit.point, transform.position) < 0.8f)
+        RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
+        if (Vector2.Distance(downHit.point, transform.position) < 1.2f)
         {
             isGrounded = true;
         }
@@ -43,18 +47,22 @@ public class enemyAI : MonoBehaviour
         }
         if (transform.localScale.x < 0)
         {
-            hit = Physics2D.Raycast(transform.position, Vector2.left);
+            edgeHit = Physics2D.Raycast(transform.position - (Vector3.down * jumpRange), Vector2.left);
+            playerHit = Physics2D.Raycast(transform.position + (Vector3.down / 2f), Vector2.left);
+            Debug.DrawRay(transform.position - (Vector3.down * jumpRange), Vector2.left);
         }
         else
         {
-            hit = Physics2D.Raycast(transform.position, Vector2.right);
+            edgeHit = Physics2D.Raycast(transform.position - (Vector3.down * jumpRange), Vector2.right);
+            playerHit = Physics2D.Raycast(transform.position + (Vector3.down / 2f), Vector2.right);
+            Debug.DrawRay(transform.position - (Vector3.down * jumpRange), Vector2.right);
         }
 
-        if (hit.collider != null && hit.transform.gameObject.tag == "Player" && currentState != ENEMY_STATE.KILLING)
+        if (playerHit.collider != null && playerHit.transform.gameObject.tag == "Player" && currentState != ENEMY_STATE.KILLING)
         {
-            if (!hit.transform.gameObject.GetComponent<PlayerMovement>().getHiding())
+            if (!playerHit.transform.gameObject.GetComponent<PlayerMovement>().getHiding())
             {
-                target = hit.transform;
+                target = playerHit.transform;
                 StopAllCoroutines();
                 currentState = ENEMY_STATE.AGGRO;
                 StartCoroutine(AttackTimeout());
@@ -65,7 +73,7 @@ public class enemyAI : MonoBehaviour
         {
             case ENEMY_STATE.IDLE:
                 aggroSpeedMultiplier = 1f;
-                if (isGrounded && Vector2.Distance(homeWaypt.position, transform.position) > 1.5f)
+                if (isGrounded && Vector2.Distance(homeWaypt.position, transform.position) > homeRange)
                 {
                     turnToDirection(homeWaypt.position.x - transform.position.x);
                 }
@@ -76,7 +84,7 @@ public class enemyAI : MonoBehaviour
                 {
                     turnToDirection(target.position.x - transform.position.x);
                 }
-                else if (Vector2.Distance(target.position, transform.position) < 1.5f)
+                else if (Vector2.Distance(target.position, transform.position) < 1.6f)
                 {
                     currentState = ENEMY_STATE.KILLING;
                 }
@@ -91,7 +99,7 @@ public class enemyAI : MonoBehaviour
 
         if (currentState != ENEMY_STATE.KILLING)
         {
-            if (Vector2.Distance(hit.point, transform.position) < .9f && isGrounded)
+            if (Vector2.Distance(edgeHit.point, transform.position) < 2.7f && isGrounded)
             {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
             }
@@ -147,6 +155,6 @@ public class enemyAI : MonoBehaviour
 
     private void FlipScale()
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(rigidBody.velocity.x)), transform.localScale.y);
+        transform.localScale = new Vector2(-Mathf.Sign(rigidBody.velocity.x) * 2, transform.localScale.y);
     }
 }
