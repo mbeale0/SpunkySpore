@@ -58,8 +58,8 @@ public class enemyAI : MonoBehaviour
 
         soundTimer -= Time.deltaTime;
 
-        RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down, 5f, whatIsGround);
-        if (Vector2.Distance(downHit.point, transform.position) < 1.2f)
+        RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down, 15f, whatIsGround);
+        if (Vector2.Distance(downHit.point, transform.position) < groundedRange)
         {
             isGrounded = true;
         }
