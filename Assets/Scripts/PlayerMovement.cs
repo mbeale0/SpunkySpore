@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!isCaptured)
         {
+            // TODO: Add check for on mycellium block
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (isHiding)
@@ -98,5 +99,10 @@ public class PlayerMovement : MonoBehaviour
             line.SetPosition(1, Vector3.zero);
             transform.Translate(Vector3.zero);
         }
+    }
+
+    public bool getHiding()
+    {
+        return isHiding;
     }
 }

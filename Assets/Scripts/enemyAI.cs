@@ -52,10 +52,13 @@ public class enemyAI : MonoBehaviour
 
         if (hit.collider != null && hit.transform.gameObject.tag == "Player" && currentState != ENEMY_STATE.KILLING)
         {
-            target = hit.transform;
-            StopAllCoroutines();
-            currentState = ENEMY_STATE.AGGRO;
-            StartCoroutine(AttackTimeout());
+            if (!hit.transform.gameObject.GetComponent<PlayerMovement>().getHiding())
+            {
+                target = hit.transform;
+                StopAllCoroutines();
+                currentState = ENEMY_STATE.AGGRO;
+                StartCoroutine(AttackTimeout());
+            }
         }
 
         switch(currentState)
@@ -79,6 +82,7 @@ public class enemyAI : MonoBehaviour
             case ENEMY_STATE.KILLING:
                 target.position = new Vector3(transform.position.x + transform.localScale.x, transform.position.y, transform.position.z);
                 target.gameObject.GetComponent<PlayerMovement>().isCaptured = true;
+                target.gameObject.GetComponent<SpriteRenderer>().material.color = new Vector4(1, 0, 0, 1);
                 rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
                 break;
         }
