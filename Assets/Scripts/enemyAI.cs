@@ -31,7 +31,7 @@ public class enemyAI : MonoBehaviour
     }
 
     void Update()
-    {        
+    {
         RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down);
         if (Vector2.Distance(downHit.point, transform.position) < 0.8f)
         {
@@ -52,17 +52,21 @@ public class enemyAI : MonoBehaviour
 
         if (hit.collider != null && hit.transform.gameObject.tag == "Player" && currentState != ENEMY_STATE.KILLING)
         {
-            target = hit.transform;
-            StopAllCoroutines();
-            currentState = ENEMY_STATE.AGGRO;
-            StartCoroutine(AttackTimeout());
+            if (!hit.transform.gameObject.GetComponent<PlayerMovement>().getHiding())
+            {
+                target = hit.transform;
+                StopAllCoroutines();
+                currentState = ENEMY_STATE.AGGRO;
+                StartCoroutine(AttackTimeout());
+            }
         }
 
-        switch(currentState)
+        switch (currentState)
         {
             case ENEMY_STATE.IDLE:
                 aggroSpeedMultiplier = 1f;
-                if (isGrounded && Vector2.Distance(homeWaypt.position, transform.position) > 1.5f) {
+                if (isGrounded && Vector2.Distance(homeWaypt.position, transform.position) > 1.5f)
+                {
                     turnToDirection(homeWaypt.position.x - transform.position.x);
                 }
                 break;
@@ -71,7 +75,8 @@ public class enemyAI : MonoBehaviour
                 if (isGrounded && Vector2.Distance(target.position, transform.position) > 0.9f)
                 {
                     turnToDirection(target.position.x - transform.position.x);
-                } else if(Vector2.Distance(target.position, transform.position) < 1.5f)
+                }
+                else if (Vector2.Distance(target.position, transform.position) < 1.5f)
                 {
                     currentState = ENEMY_STATE.KILLING;
                 }
@@ -79,11 +84,13 @@ public class enemyAI : MonoBehaviour
             case ENEMY_STATE.KILLING:
                 target.position = new Vector3(transform.position.x + transform.localScale.x, transform.position.y, transform.position.z);
                 target.gameObject.GetComponent<PlayerMovement>().isCaptured = true;
+                target.gameObject.GetComponent<SpriteRenderer>().material.color = new Vector4(1, 0, 0, 1);
                 rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
                 break;
         }
 
-        if (currentState != ENEMY_STATE.KILLING) {
+        if (currentState != ENEMY_STATE.KILLING)
+        {
             if (Vector2.Distance(hit.point, transform.position) < .9f && isGrounded)
             {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
@@ -128,10 +135,11 @@ public class enemyAI : MonoBehaviour
 
     public void turnToDirection(float direction)
     {
-        if(direction < -0.2 && IsFacingRight())
+        if (direction < -0.2 && IsFacingRight())
         {
             FlipScale();
-        } else if(direction > 0.2 && !IsFacingRight())
+        }
+        else if (direction > 0.2 && !IsFacingRight())
         {
             FlipScale();
         }
