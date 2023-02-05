@@ -91,7 +91,7 @@ public class enemyAI : MonoBehaviour
 
         if (currentState != ENEMY_STATE.KILLING)
         {
-            if (Vector2.Distance(hit.point, transform.position) < .9f && isGrounded)
+            if (!hit.transform.gameObject.CompareTag("Player") && Vector2.Distance(hit.point, transform.position) < .9f && isGrounded)
             {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
             }
