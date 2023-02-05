@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         line = transform.GetChild(0).GetComponent<LineRenderer>();
         line.SetPosition(1, Vector3.zero);
         loseCanvas.SetActive(false);
+        Time.timeScale = 1;
     }
     void Update()
     {
@@ -39,11 +40,15 @@ public class PlayerMovement : MonoBehaviour
                 if (isHiding)
                 {
                     spriteRenderer.material.color = new Vector4(1, 0, 0, 1);
+                    GetComponent<Rigidbody2D>().gravityScale = 1;
+                    GetComponent<BoxCollider2D>().isTrigger = false;
                     isHiding = false;
                 }
                 else
                 {
                     spriteRenderer.material.color = new Vector4(.5f, 0, 0, .4f);
+                    GetComponent<Rigidbody2D>().gravityScale = 0;
+                    GetComponent<BoxCollider2D>().isTrigger = true;
                     isHiding = true;
                 }
             }
