@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         line.SetPosition(1, Vector3.zero);
         loseCanvas.SetActive(false);
         Time.timeScale = 1;
+        AkSoundEngine.StopAll(gameObject);
     }
     void Update()
     {

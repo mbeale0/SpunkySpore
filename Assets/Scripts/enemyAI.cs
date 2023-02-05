@@ -39,6 +39,7 @@ public class enemyAI : MonoBehaviour
         anim = GetComponent<Animator>();
         Physics2D.queriesStartInColliders = false;
         rigidBody = GetComponent<Rigidbody2D>();
+        AkSoundEngine.StopAll(gameObject);
     }
 
     void Update()
@@ -122,7 +123,6 @@ public class enemyAI : MonoBehaviour
                 target.gameObject.GetComponent<SpriteRenderer>().material.color = new Vector4(1, 0, 0, 1);
                 rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
                 anim.SetBool("isKilling", true);
-
                 break;
         }
 
@@ -186,5 +186,10 @@ public class enemyAI : MonoBehaviour
     {
         
         transform.localScale = new Vector2(-Mathf.Sign(rigidBody.velocity.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y);
+    }
+
+    private void OnDestroy()
+    {
+        AkSoundEngine.StopAll(gameObject);
     }
 }
