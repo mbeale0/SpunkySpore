@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class enemyAI : MonoBehaviour
 {
+    private Animator anim;
+
     [SerializeField] private float moveSpeed = .8f;
     [SerializeField] private float aggroSpeedMultiplier = 1f;
     [SerializeField] private float jumpForce = .8f;
     [SerializeField] private float homeRange = 5f;
     [SerializeField] private Transform homeWaypt = null;
     public float jumpRange = -1f;
+    public float soundTimer = 3f;
 
     private RaycastHit2D edgeHit;
     private RaycastHit2D playerHit;
@@ -30,12 +33,28 @@ public class enemyAI : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         Physics2D.queriesStartInColliders = false;
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        if(soundTimer < 0)
+        {
+            if(currentState == ENEMY_STATE.IDLE)
+            {
+                //AkSoundEngine.PostEvent("MantisPassive", gameObject);
+                soundTimer = (Random.value * 2 + 3);
+            } else
+            {
+                AkSoundEngine.PostEvent("MantisAggro", gameObject);
+                soundTimer = (Random.value * 2 + 3);
+            }
+        }
+
+        soundTimer -= Time.deltaTime;
+
         RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
         if (Vector2.Distance(downHit.point, transform.position) < 1.2f)
         {
@@ -62,6 +81,7 @@ public class enemyAI : MonoBehaviour
         {
             if (!playerHit.transform.gameObject.GetComponent<PlayerMovement>().getHiding())
             {
+                if (currentState != ENEMY_STATE.AGGRO) soundTimer = 0;
                 target = playerHit.transform;
                 StopAllCoroutines();
                 currentState = ENEMY_STATE.AGGRO;
@@ -77,6 +97,7 @@ public class enemyAI : MonoBehaviour
                 {
                     turnToDirection(homeWaypt.position.x - transform.position.x);
                 }
+                anim.SetFloat("AggroValue", 0.5f);
                 break;
             case ENEMY_STATE.AGGRO:
                 aggroSpeedMultiplier = 2.5f;
@@ -87,13 +108,17 @@ public class enemyAI : MonoBehaviour
                 else if (Vector2.Distance(target.position, transform.position) < 1.6f)
                 {
                     currentState = ENEMY_STATE.KILLING;
+                    AkSoundEngine.PostEvent("MantisKill", gameObject);
                 }
+                anim.SetFloat("AggroValue", 0.8f);
                 break;
             case ENEMY_STATE.KILLING:
                 target.position = new Vector3(transform.position.x + transform.localScale.x, transform.position.y, transform.position.z);
                 target.gameObject.GetComponent<PlayerMovement>().isCaptured = true;
                 target.gameObject.GetComponent<SpriteRenderer>().material.color = new Vector4(1, 0, 0, 1);
                 rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
+                anim.SetBool("isKilling", true);
+
                 break;
         }
 

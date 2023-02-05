@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1732923451764311002}
   - component: {fileID: 526344469295014324}
   - component: {fileID: 7892450835760088449}
+  - component: {fileID: 6815138341416464370}
+  - component: {fileID: 2476380198941994580}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -33,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &483452143397106583
 SpriteRenderer:
@@ -77,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1993098033, guid: 3a3984286ab48be4d81c42c0f3b026c0, type: 3}
-  m_Color: {r: 0.22904721, g: 0.9433962, b: 0.09344962, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,6 +107,7 @@ MonoBehaviour:
   homeRange: 5
   homeWaypt: {fileID: 0}
   jumpRange: -0.87
+  soundTimer: 3
   isGrounded: 0
   whatIsGround:
     serializedVersion: 2
@@ -157,3 +160,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3668306, y: 0.9303446}
   m_EdgeRadius: 0
+--- !u!95 &6815138341416464370
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564553236204209541}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3370f4fc0d45e4469650cad53832b9d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2476380198941994580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564553236204209541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e387e2fe26808f4da542c0d328ac545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 183cc1ab2e21c91478e8578f14b1320d, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
