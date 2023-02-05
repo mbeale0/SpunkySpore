@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!isCaptured)
         {
+            // TODO: Add check for on mycellium block
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (isHiding)
@@ -104,5 +105,10 @@ public class PlayerMovement : MonoBehaviour
             loseCanvas.SetActive(true);
         }
 
+    }
+
+    public bool getHiding()
+    {
+        return isHiding;
     }
 }
