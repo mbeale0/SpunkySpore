@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{720A7F33-6FCE-4708-84FA-6A79FC22E44A}" SchemaVersion="110">
+<WwiseDocument Type="WorkUnit" ID="{94651928-7D34-4B41-974D-2F85D14D54AD}" SchemaVersion="110">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{720A7F33-6FCE-4708-84FA-6A79FC22E44A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{94651928-7D34-4B41-974D-2F85D14D54AD}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Grapple" ID="{1146BE58-35CC-4A08-A880-A2F49EF1DFE0}">
+					<ObjectInclusionList>
+						<ObjectRef Name="GrappleLatch" ID="{7C59F607-0D23-41B9-8022-ABB80553C930}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GrappleShoot" ID="{5728198A-2FA0-41FF-9EEB-C37C5ECA3F06}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MantisAggro" ID="{8E414E0E-41DE-429D-970C-9CC770987BFF}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Hide" ID="{D579939A-6F27-4547-8F9A-66DA41D10879}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Interact" ID="{180F1963-6D26-480D-8534-4F7F65FE582B}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Land" ID="{3D4890CE-966D-4947-9A51-CD65184CFEB9}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GrappleUnlatch" ID="{BFA81F31-185D-4992-BB5E-48C4B76653B7}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MoveStop" ID="{CFEE36DE-13D0-4A25-BCDC-630BA4E390A8}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MoveStart" ID="{65E0E866-876C-4B0C-8345-B7E636D327C9}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MantisKill" ID="{03D6077C-0A4A-4DDD-BFB5-4A77ACF37E59}" WorkUnitID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>

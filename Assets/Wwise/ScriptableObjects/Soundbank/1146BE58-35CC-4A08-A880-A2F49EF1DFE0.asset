@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751d58075d4d8c14aa69571e2a3c47ba, type: 3}
+  m_Name: 1146BE58-35CC-4A08-A880-A2F49EF1DFE0
+  m_EditorClassIdentifier: 
+  objectName: Grapple
+  id: 1703472526
+  guid: 1146BE58-35CC-4A08-A880-A2F49EF1DFE0

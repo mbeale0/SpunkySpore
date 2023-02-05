@@ -1,6 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{7358AD17-609D-4DB8-AFBC-3F4E240E4400}" SchemaVersion="110">
+<WwiseDocument Type="WorkUnit" ID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{7358AD17-609D-4DB8-AFBC-3F4E240E4400}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3EE8C6AA-AE3E-4DBD-84DA-30F7CF13FF28}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="GrappleShoot" ID="{5728198A-2FA0-41FF-9EEB-C37C5ECA3F06}">
+					<ChildrenList>
+						<Action Name="" ID="{CD224D97-B5B2-4E7B-90D2-7151768C8BB0}" ShortID="282909265">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cordy_Grapple" ID="{9367D869-A675-43C5-9313-38B141C56AD1}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{93EF0C09-3B79-4AE7-AD5F-0C75D95C5B0A}" ShortID="640693499">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grapple" ID="{B810A849-BE85-4707-8995-B454A2461A83}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="GrappleLatch" ID="{7C59F607-0D23-41B9-8022-ABB80553C930}">
+					<ChildrenList>
+						<Action Name="" ID="{050EE784-1120-444A-A850-4D83D2653330}" ShortID="386070066">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grapple" ID="{B810A849-BE85-4707-8995-B454A2461A83}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="GrappleUnlatch" ID="{BFA81F31-185D-4992-BB5E-48C4B76653B7}">
+					<ChildrenList>
+						<Action Name="" ID="{D055DE7F-127E-4A05-9D6C-AA6C08D2702C}" ShortID="815062586">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grapple" ID="{B810A849-BE85-4707-8995-B454A2461A83}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0B902BDB-7A13-4B05-850B-F7B3DCC56707}" ShortID="281318060">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grapple" ID="{B810A849-BE85-4707-8995-B454A2461A83}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MantisKill" ID="{03D6077C-0A4A-4DDD-BFB5-4A77ACF37E59}">
+					<ChildrenList>
+						<Action Name="" ID="{00386C2D-6F78-4CBC-8C94-D3000A5F30A7}" ShortID="374585979">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Struggle" ID="{CEC01C9A-5344-477D-BBBF-C0B32314A894}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D2B13C3C-40A6-4BBF-A720-FBBAA08DB5C7}" ShortID="942587155">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Blade" ID="{7BC9E682-C4A5-4ADF-93BE-148022DC1D90}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C6A38266-13AA-476F-B47B-0E9A65B502E7}" ShortID="369597871">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stab_Riser" ID="{6C827FE2-BC92-44DA-B826-767BDA1C68B2}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5ABBE505-6C71-472D-98BC-662C2EE866C7}" ShortID="1067580619">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="2.8"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stab" ID="{EA36B541-4FA9-4CA5-9BD0-A5A2A0F079B5}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D30076ED-E5FA-49CA-8A28-E7EEAC152074}" ShortID="974304807">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="2.9"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Death" ID="{ECAE381B-BD2A-4315-B6E7-F420D19DF901}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MoveStart" ID="{65E0E866-876C-4B0C-8345-B7E636D327C9}">
+					<ChildrenList>
+						<Action Name="" ID="{6BE3F7BA-5B14-4BDE-A836-7CE84F0F97A0}" ShortID="304125073">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mycelium_Footstep" ID="{FD7F7062-F505-4918-8506-03D50D00B19C}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MoveStop" ID="{CFEE36DE-13D0-4A25-BCDC-630BA4E390A8}">
+					<ChildrenList>
+						<Action Name="" ID="{7ABC9279-82E5-4643-856D-68D80FFD22B3}" ShortID="189114300">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mycelium_Footstep" ID="{FD7F7062-F505-4918-8506-03D50D00B19C}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Land" ID="{3D4890CE-966D-4947-9A51-CD65184CFEB9}">
+					<ChildrenList>
+						<Action Name="" ID="{F7999322-0661-461B-BAAB-EB3A77D32865}" ShortID="1036800018">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Land" ID="{BAFD924B-F9B3-47F5-A12F-64E8160E217F}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Hide" ID="{D579939A-6F27-4547-8F9A-66DA41D10879}">
+					<ChildrenList>
+						<Action Name="" ID="{91428DF9-F6C1-4291-84FE-EA5C0EB06203}" ShortID="244654841">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Hide" ID="{12650852-0037-4379-B7D6-A5AFD73B7515}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Interact" ID="{180F1963-6D26-480D-8534-4F7F65FE582B}">
+					<ChildrenList>
+						<Action Name="" ID="{AED4D136-CB92-4390-88B1-A26035D53886}" ShortID="84542692">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Action" ID="{5A97E176-BF15-4F98-9541-47911AD04FD5}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MantisAggro" ID="{8E414E0E-41DE-429D-970C-9CC770987BFF}">
+					<ChildrenList>
+						<Action Name="" ID="{D7685C46-58BD-4191-B2D5-080E8A61F9B4}" ShortID="380647476">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mantis_Aggro" ID="{5A2494A9-19F0-4FB0-9F35-FFA1CD07157F}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{18CF0CB8-CEC4-479A-89EE-A55F1BB6D5BC}" ShortID="136930409">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="10">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{6EDF1769-1517-497B-9A72-2681360D97A8}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mantis_Aggro" ID="{5A2494A9-19F0-4FB0-9F35-FFA1CD07157F}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MantisPassive" ID="{9F7811F6-2E07-4691-ADAB-C8AADC12D402}">
+					<ChildrenList>
+						<Action Name="" ID="{835B4F04-EB5F-4053-BEBB-CB81F9BF5811}" ShortID="604210634">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mantis_Idle" ID="{3B6869D8-CB96-4E8B-8BBA-9125F89FF926}" WorkUnitID="{20616D31-68AE-4BDB-A96C-E015277BB5AA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

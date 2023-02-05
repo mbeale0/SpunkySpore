@@ -1,0 +1,16 @@
+Event	ID	Name			Wwise Object Path	Notes
+	204092275	GrappleUnlatch			\Default Work Unit\GrappleUnlatch	
+	1246886611	GrappleShoot			\Default Work Unit\GrappleShoot	
+	3628150596	GrappleLatch			\Default Work Unit\GrappleLatch	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	225582601	green head and orange_7	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\green head and orange.7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Grapple\green head and orange_7		626018
+	546308634	Grapple_1	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\Grapple\Grapple_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cordy\Cordy_Grapple\Grapple\Grapple_1		96160
+	584894398	green head and orange_9	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\green head and orange.9_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Grapple\green head and orange_9		583014
+	644565044	Grapple_5	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\Grapple\Grapple_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cordy\Cordy_Grapple\Grapple\Grapple_5		55856
+	664205785	Grapple_3	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\Grapple\Grapple_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cordy\Cordy_Grapple\Grapple\Grapple_3		53964
+	862335053	Grapple_4	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\Grapple\Grapple_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cordy\Cordy_Grapple\Grapple\Grapple_4		76460
+	974688462	green head and orange_3	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\green head and orange.3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Grapple\green head and orange_3		67364
+	979420450	Grapple_2	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\Grapple\Grapple_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cordy\Cordy_Grapple\Grapple\Grapple_2		102760
+	1059248685	Grapple_6	Z:\Applications\Audiokinetic\Wwise 2022.1.1.8100\Cube\Wwise-101_v2021\Lesson 1\Spunky Spore\.cache\Windows\SFX\Grapple\Grapple_6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cordy\Cordy_Grapple\Grapple\Grapple_6		72160
+

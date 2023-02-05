@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../..</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<ProjectRoot>../../</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac/</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F56A610C-C7C4-F874-B68B-7ADDF94EBB7A}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2B161180-9DF1-511F-6D66-CBC7F0926F85}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<ShareSets>
+					<Plugin Id="602546716" Name="Room_Large" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
@@ -20,8 +23,387 @@
 			</Plugins>
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="4252332463" Name="Room Verb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="602546716"/>
+						</ShareSets>
+					</PluginRefs>
+				</Bus>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
+				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
+				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
+				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
+				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
+				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
+				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+			</GameParameters>
+			<AcousticTextures>
+				<AcousticTexture Id="504532776" Name="Brick">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="18"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="23"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="513139656" Name="Mountain">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="841620460" Name="Concrete">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1755085759" Name="Wood_Deep">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="1"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="8"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1873957695" Name="Anechoic">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1970351858" Name="Fabric">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="3"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="13"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="48"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="72"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2058049674" Name="Wood">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2412606308" Name="Carpet">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="46"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="45"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="76"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2637588553" Name="Tile">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="67"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="41"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2928161104" Name="Curtains">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="7"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="60"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="84"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3195498748" Name="Cork_Tiles">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="14"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="30"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="73"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3670307564" Name="Drywall">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="2"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4168643977" Name="Acoustic_Banner">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="37"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4262522749" Name="Wood_Bright">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="10"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="9"/>
+					</Properties>
+				</AcousticTexture>
+			</AcousticTextures>
+		</SoundBank>
+		<SoundBank Id="1703472526" Type="User" Language="SFX" Hash="{ED84155D-7026-32CB-5676-74FD6787099E}">
+			<ShortName>Grapple</ShortName>
+			<Path>Grapple.bnk</Path>
+			<Media>
+				<File Id="11113727" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mantis_7.wav</ShortName>
+					<CachePath>SFX/Mantis_7_10C4C929.wem</CachePath>
+				</File>
+				<File Id="25525937" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Struggle\Struggle_3.wav</ShortName>
+					<CachePath>SFX/Struggle/Struggle_3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="42065898" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.39.wav</ShortName>
+					<CachePath>SFX/green head and orange.39_D77F5E12.wem</CachePath>
+				</File>
+				<File Id="61148418" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.7.wav</ShortName>
+					<CachePath>SFX/green head and orange.7_6E9BF664.wem</CachePath>
+				</File>
+				<File Id="188258903" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>apple squish.35.wav</ShortName>
+					<CachePath>SFX/apple squish.35_10C4C929.wem</CachePath>
+				</File>
+				<File Id="225582601" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.7.wav</ShortName>
+					<CachePath>SFX/green head and orange.7_10C4C929.wem</CachePath>
+				</File>
+				<File Id="231880216" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death\Death_1.wav</ShortName>
+					<CachePath>SFX/Death/Death_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="242315375" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mantis_6.wav</ShortName>
+					<CachePath>SFX/Mantis_6_10C4C929.wem</CachePath>
+				</File>
+				<File Id="277221710" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Action\Action_2.wav</ShortName>
+					<CachePath>SFX/Action/Action_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="364918756" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>apple squish.31.wav</ShortName>
+					<CachePath>SFX/apple squish.31_4A4CEDF3.wem</CachePath>
+				</File>
+				<File Id="373261820" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.31.wav</ShortName>
+					<CachePath>SFX/green head and orange.31_C52D501E.wem</CachePath>
+				</File>
+				<File Id="375293044" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.27.wav</ShortName>
+					<CachePath>SFX/green head and orange.27_8A6DECB6.wem</CachePath>
+				</File>
+				<File Id="378674287" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.17.wav</ShortName>
+					<CachePath>SFX/green head and orange.17_1935BCFB.wem</CachePath>
+				</File>
+				<File Id="452553734" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Stab.wav</ShortName>
+					<CachePath>SFX/Stab_10C4C929.wem</CachePath>
+				</File>
+				<File Id="458592185" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Land\Land_4.wav</ShortName>
+					<CachePath>SFX/Land/Land_4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="523137039" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death\Death_3.wav</ShortName>
+					<CachePath>SFX/Death/Death_3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="530435415" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Land\Land_1.wav</ShortName>
+					<CachePath>SFX/Land/Land_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="540195304" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Action\Action_3.wav</ShortName>
+					<CachePath>SFX/Action/Action_3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="546308634" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Grapple\Grapple_1.wav</ShortName>
+					<CachePath>SFX/Grapple/Grapple_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="558665641" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>apple squish.27.wav</ShortName>
+					<CachePath>SFX/apple squish.27_10C4C929.wem</CachePath>
+				</File>
+				<File Id="568691690" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death\Death_2.wav</ShortName>
+					<CachePath>SFX/Death/Death_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="581645089" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.13.wav</ShortName>
+					<CachePath>SFX/green head and orange.13_C125A8AB.wem</CachePath>
+				</File>
+				<File Id="584894398" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.9.wav</ShortName>
+					<CachePath>SFX/green head and orange.9_10C4C929.wem</CachePath>
+				</File>
+				<File Id="600244703" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Land\Land_5.wav</ShortName>
+					<CachePath>SFX/Land/Land_5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="609035519" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.21.wav</ShortName>
+					<CachePath>SFX/green head and orange.21_2036CECA.wem</CachePath>
+				</File>
+				<File Id="634485360" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Land\Land_3.wav</ShortName>
+					<CachePath>SFX/Land/Land_3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="644565044" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Grapple\Grapple_5.wav</ShortName>
+					<CachePath>SFX/Grapple/Grapple_5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="664205785" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Grapple\Grapple_3.wav</ShortName>
+					<CachePath>SFX/Grapple/Grapple_3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="671436198" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Land\Land_2.wav</ShortName>
+					<CachePath>SFX/Land/Land_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="717969913" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Land\Land_6.wav</ShortName>
+					<CachePath>SFX/Land/Land_6_10C4C929.wem</CachePath>
+				</File>
+				<File Id="743235160" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Struggle\Struggle_2.wav</ShortName>
+					<CachePath>SFX/Struggle/Struggle_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="834632745" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.43.wav</ShortName>
+					<CachePath>SFX/green head and orange.43_D9D77DFD.wem</CachePath>
+				</File>
+				<File Id="861337163" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Stab_Riser.wav</ShortName>
+					<CachePath>SFX/Stab_Riser_08F031A7.wem</CachePath>
+				</File>
+				<File Id="862335053" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Grapple\Grapple_4.wav</ShortName>
+					<CachePath>SFX/Grapple/Grapple_4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="880599432" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Action\Action_1.wav</ShortName>
+					<CachePath>SFX/Action/Action_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="938328629" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Blade.wav</ShortName>
+					<CachePath>SFX/Blade_10C4C929.wem</CachePath>
+				</File>
+				<File Id="972410363" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Struggle\Struggle_1.wav</ShortName>
+					<CachePath>SFX/Struggle/Struggle_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="974688462" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>green head and orange.3.wav</ShortName>
+					<CachePath>SFX/green head and orange.3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="979420450" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Grapple\Grapple_2.wav</ShortName>
+					<CachePath>SFX/Grapple/Grapple_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1059248685" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Grapple\Grapple_6.wav</ShortName>
+					<CachePath>SFX/Grapple/Grapple_6_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3628150596" Name="GrappleLatch"/>
+				<Event Id="1246886611" Name="GrappleShoot">
+					<MediaRefs>
+						<MediaRef Id="225582601"/>
+						<MediaRef Id="546308634"/>
+						<MediaRef Id="584894398"/>
+						<MediaRef Id="644565044"/>
+						<MediaRef Id="664205785"/>
+						<MediaRef Id="862335053"/>
+						<MediaRef Id="974688462"/>
+						<MediaRef Id="979420450"/>
+						<MediaRef Id="1059248685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="204092275" Name="GrappleUnlatch">
+					<MediaRefs>
+						<MediaRef Id="225582601"/>
+						<MediaRef Id="584894398"/>
+						<MediaRef Id="974688462"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3500475733" Name="Hide">
+					<MediaRefs>
+						<MediaRef Id="188258903"/>
+						<MediaRef Id="364918756"/>
+						<MediaRef Id="558665641"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1466384055" Name="Interact">
+					<MediaRefs>
+						<MediaRef Id="277221710"/>
+						<MediaRef Id="540195304"/>
+						<MediaRef Id="880599432"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="674522502" Name="Land">
+					<MediaRefs>
+						<MediaRef Id="458592185"/>
+						<MediaRef Id="530435415"/>
+						<MediaRef Id="600244703"/>
+						<MediaRef Id="634485360"/>
+						<MediaRef Id="671436198"/>
+						<MediaRef Id="717969913"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1049332501" Name="MantisAggro">
+					<MediaRefs>
+						<MediaRef Id="11113727"/>
+						<MediaRef Id="242315375"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3896898561" Name="MantisKill">
+					<MediaRefs>
+						<MediaRef Id="25525937"/>
+						<MediaRef Id="231880216"/>
+						<MediaRef Id="452553734"/>
+						<MediaRef Id="523137039"/>
+						<MediaRef Id="568691690"/>
+						<MediaRef Id="743235160"/>
+						<MediaRef Id="861337163"/>
+						<MediaRef Id="938328629"/>
+						<MediaRef Id="972410363"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2298039058" Name="MoveStart">
+					<MediaRefs>
+						<MediaRef Id="42065898"/>
+						<MediaRef Id="61148418"/>
+						<MediaRef Id="373261820"/>
+						<MediaRef Id="375293044"/>
+						<MediaRef Id="378674287"/>
+						<MediaRef Id="581645089"/>
+						<MediaRef Id="609035519"/>
+						<MediaRef Id="834632745"/>
+						<MediaRef Id="974688462"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1159713994" Name="MoveStop"/>
+			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{85FB997E-979E-429B-B6F1-CF88BB808457}</FileHash>
+	<FileHash>{02C7A672-EEC6-080F-6601-48BC72DC4825}</FileHash>
 </SoundBanksInfo>

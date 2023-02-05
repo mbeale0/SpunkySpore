@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{2FB500C5-C353-4FCE-82B5-CCBA66B403EF}" SchemaVersion="110">
+<WwiseDocument Type="WorkUnit" ID="{49200682-FCA9-4F53-9482-F55D4EAA1B29}" SchemaVersion="110">
 	<Busses>
-		<WorkUnit Name="Default Work Unit" ID="{2FB500C5-C353-4FCE-82B5-CCBA66B403EF}" PersistMode="Standalone">
+		<WorkUnit Name="Default Work Unit" ID="{49200682-FCA9-4F53-9482-F55D4EAA1B29}" PersistMode="Standalone">
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
 					<ReferenceList>
 						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
-							<ObjectRef Name="System" ID="{350756A4-A6EC-4F6E-812E-6929742C369A}" WorkUnitID="{980E55F6-6696-445B-B339-39A79523874E}"/>
+							<ObjectRef Name="System" ID="{04606E1D-5654-4B2F-9CDC-0B84EACEFE54}" WorkUnitID="{43EBD0B5-BB7E-4F65-ACE0-F12DF34A445C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Room Verb" ID="{8F6171AF-5580-4C3B-8F96-F980E06979C9}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{04606E1D-5654-4B2F-9CDC-0B84EACEFE54}" WorkUnitID="{43EBD0B5-BB7E-4F65-ACE0-F12DF34A445C}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Room_Large" ID="{AD8EFAFC-7121-4D5F-BE4D-B13FBD6CEBAE}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 					</ReferenceList>
 				</Bus>
