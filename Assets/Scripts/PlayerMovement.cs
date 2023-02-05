@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float grappleSpeed;
     [SerializeField] private GameObject loseCanvas = null;
 
+
     private Vector3 grappleVelocity = new Vector3(0, 0, 0);
     public Vector3 grapplePoint;
     private LineRenderer line;
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Color hiddenColor;
     private bool isHiding = false;
     public bool isCaptured = false;
-
+    public bool isGrounded = true;
     public LayerMask whatIsGround;
     public LayerMask whatIsMycelium;
     void Start()
@@ -32,10 +33,19 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+
+        RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down, 5f, whatIsGround);
+        if (Vector2.Distance(downHit.point, transform.position) < .6f)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
         if (!isCaptured)
         {
-            // TODO: Add check for on mycellium block
-            if (Input.GetKeyDown(KeyCode.E) && grappleVelocity == Vector3.zero)
+            if (Input.GetKeyDown(KeyCode.E) && grappleVelocity == Vector3.zero && isGrounded)
             {
                 if (isHiding)
                 {
