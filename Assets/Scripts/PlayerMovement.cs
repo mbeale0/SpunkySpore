@@ -7,9 +7,10 @@ using UnityEngine.Tilemaps;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Vector2 speed = new Vector2(50, 50);
+    [SerializeField] public float grappleSpeed;
+    [SerializeField] private GameObject loseCanvas = null;
 
     private Vector3 grappleVelocity = new Vector3(0, 0, 0);
-    [SerializeField] public float grappleSpeed;
     public Vector3 grapplePoint;
     private LineRenderer line;
 
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer.material.color = new Vector4(1, 0, 0, 1);
         line = transform.GetChild(0).GetComponent<LineRenderer>();
         line.SetPosition(1, Vector3.zero);
+        loseCanvas.SetActive(false);
     }
     void Update()
     {
@@ -93,12 +95,16 @@ public class PlayerMovement : MonoBehaviour
                     grapplePoint = ray.point;
                 }
             }
-        } else
+        } 
+        else
         {
             GetComponent<Rigidbody2D>().isKinematic = true;
             line.SetPosition(1, Vector3.zero);
             transform.Translate(Vector3.zero);
+            Time.timeScale = 0;
+            loseCanvas.SetActive(true);
         }
+
     }
 
     public bool getHiding()
