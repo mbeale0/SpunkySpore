@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         line = transform.GetChild(0).GetComponent<LineRenderer>();
         line.SetPosition(1, Vector3.zero);
         loseCanvas.SetActive(false);
+        Time.timeScale = 1;
     }
     void Update()
     {
