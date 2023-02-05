@@ -17,9 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 grappleVelocity = new Vector3(0, 0, 0);
     public Vector3 grapplePoint;
     private LineRenderer line;
-
+     
     private SpriteRenderer spriteRenderer = null;
     private bool isHiding = false;
+    private bool isTouchingMycelium = false;
     public bool isCaptured = false;
     public bool isGrounded = true;
     public LayerMask whatIsGround;
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-
+        
         RaycastHit2D downHit = Physics2D.Raycast(transform.position, Vector2.down, 5f, whatIsGround);
         if (Vector2.Distance(downHit.point, transform.position) < .6f)
         {
@@ -48,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!isCaptured)
         {
-            if (Input.GetKeyDown(KeyCode.E) && grappleVelocity == Vector3.zero && isGrounded)
+            if (Input.GetKeyDown(KeyCode.E) && grappleVelocity == Vector3.zero && isGrounded && isTouchingMycelium)
             {
                 if (isHiding)
                 {
@@ -156,7 +157,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
+    public void setIsTouchingMycelium(bool isTouching)
+    {
+        isTouchingMycelium = isTouching;
+    }
     public bool getHiding()
     {
         return isHiding;

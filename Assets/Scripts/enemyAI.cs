@@ -97,7 +97,6 @@ public class enemyAI : MonoBehaviour
         {
             case ENEMY_STATE.IDLE:
                 aggroSpeedMultiplier = 1f;
-                if(name == "Enemy (1)") Debug.Log(Vector2.Distance(homeWaypt.position, transform.position) > homeRange);
                 if (isGrounded && Vector2.Distance(homeWaypt.position, transform.position) > homeRange)
                 {
                     turnToDirection(homeWaypt.position.x - transform.position.x);
