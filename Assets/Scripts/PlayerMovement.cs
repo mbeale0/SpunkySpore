@@ -6,6 +6,9 @@ using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Animator anim;
+    public float soundTimer;
+
     [SerializeField] private Vector2 speed = new Vector2(50, 50);
     [SerializeField] public float grappleSpeed;
     [SerializeField] private GameObject loseCanvas = null;
@@ -16,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     private LineRenderer line;
 
     private SpriteRenderer spriteRenderer = null;
-    private Color hiddenColor;
     private bool isHiding = false;
     public bool isCaptured = false;
     public bool isGrounded = true;
@@ -24,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsMycelium;
     void Start()
     {
+        anim = GetComponent<Animator>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        spriteRenderer.material.color = new Vector4(1, 0, 0, 1);
         line = transform.GetChild(0).GetComponent<LineRenderer>();
         line.SetPosition(1, Vector3.zero);
         loseCanvas.SetActive(false);
@@ -49,14 +51,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isHiding)
                 {
-                    spriteRenderer.material.color = new Vector4(1, 0, 0, 1);
+                    anim.SetBool("isHiding", false);
                     GetComponent<Rigidbody2D>().gravityScale = 1;
                     GetComponent<BoxCollider2D>().isTrigger = false;
                     isHiding = false;
                 }
                 else
                 {
-                    spriteRenderer.material.color = new Vector4(.5f, 0, 0, .4f);
+                    anim.SetBool("isHiding", true);
+                    AkSoundEngine.PostEvent("Hide", gameObject);
                     GetComponent<Rigidbody2D>().gravityScale = 0;
                     GetComponent<BoxCollider2D>().isTrigger = true;
                     isHiding = true;
@@ -80,15 +83,32 @@ public class PlayerMovement : MonoBehaviour
                         grapplePoint = Vector3.zero;
                         GetComponent<Rigidbody2D>().isKinematic = false;
                         AkSoundEngine.PostEvent("GrappleUnlatch", gameObject);
+                        anim.SetBool("isGrappling", false);
                     }
                 }
                 else
                 {
                     float inputX = Input.GetAxis("Horizontal");
                     float inputY = Input.GetAxis("Vertical");
-                    Vector3 mvmt = new(speed.x * inputX, 0, 0);
-                    mvmt *= Time.deltaTime;
-                    transform.Translate(mvmt);
+
+                    if(Mathf.Abs(inputX) > 0.01f)
+                    {
+                        anim.SetBool("isMoving", true);
+                        Vector3 mvmt = new(speed.x * inputX, 0, 0);
+                        mvmt *= Time.deltaTime;
+                        transform.Translate(mvmt);
+                    } else
+                    {
+                        anim.SetBool("isMoving", false);
+                        AkSoundEngine.PostEvent("MoveStop", gameObject);
+                    }
+
+                    if(Input.GetButtonDown("Horizontal"))
+                    {
+                        AkSoundEngine.PostEvent("MoveStart", gameObject);
+                    }
+
+                    GetComponent<SpriteRenderer>().flipX = inputX < 0;
                 }
             }
 
@@ -113,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
                     Debug.Log("WHEEEEEEE");
                     grapplePoint = ray.point;
                     AkSoundEngine.PostEvent("GrappleLatch", gameObject);
+                    anim.SetBool("isGrappling", true);
                 } else if(line.GetPosition(1).magnitude > 50 || Physics2D.Raycast(line.transform.position, grappleVelocity, line.GetPosition(1).magnitude, whatIsGround))
                 {
                     line.SetPosition(1, Vector3.zero);
@@ -124,6 +145,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            anim.SetBool("isAlive", false);
+            AkSoundEngine.StopAll(gameObject);
             GetComponent<Rigidbody2D>().isKinematic = true;
             line.SetPosition(1, Vector3.zero);
             transform.Translate(Vector3.zero);
